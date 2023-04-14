@@ -16,9 +16,21 @@ reset();
 
 //Eventos
 document.querySelector('.reset').addEventListener('click', reset);
-
+document.querySelectorAll('.item').forEach(item => {
+    item.addEventListener('click', itemClick);
+})
 
 //funções
+
+function itemClick(event) {
+   let item = event.target.getAttribute('data-item');
+   if(square[item] === '') {
+    square[item] = player;
+    renderSquare();
+    toggleplayer();
+   }
+}
+
 function reset() {
     warning = '';
 
@@ -38,10 +50,17 @@ function reset() {
 
 function renderSquare() {
     for(let i in square) {
-        console.log('ITEM: ', i);
+        let item = document.querySelector(`div[data-item=${i}]`);
+        item.innerHTML = square[i];
     }
 }
 
 function renderInfo() {
+    document.querySelector('.vez').innerHTML = player;
+    document.querySelector('.resultado').innerHTML = warning;
+}
 
+function toggleplayer() {
+    player = (player === 'x') ? 'o' : 'x';
+    renderInfo();
 }

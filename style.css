@@ -47,8 +47,8 @@ body {
   cursor: pointer;
 }
 
-.item:hover {
-  background-color: rgba(0, 0, 0, 0.1);
+ .item:hover {
+    background-color: rgba(0, 0, 0, 0.1);
 }
 
 .item.t {
@@ -98,4 +98,12 @@ body {
   text-transform: uppercase;
   margin: 0 auto;
   display: block;
+}
+
+button.reset:hover {
+  background-color: rgb(25, 24, 24);
+}
+
+.infoitem:hover {
+  background-color: rgba(0, 0, 0, 0.1);
 }
